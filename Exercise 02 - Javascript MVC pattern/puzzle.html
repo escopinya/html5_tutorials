@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>	
+	<SCRIPT LANGUAGE="JavaScript" SRC="js/PuzzleMO.js"></SCRIPT>	
+	<SCRIPT LANGUAGE="JavaScript" SRC="js/PuzzleView.js"></SCRIPT>	
+	<SCRIPT LANGUAGE="JavaScript" SRC="js/PuzzleController.js"></SCRIPT>	
+    <script>
+        const PUZZLE_DIFFICULTY = 4;
+		const PUZZLE_IMG_SRC = "img/mke.jpg";							
+		var puzzleController;
+	
+		function init(){
+			puzzleController = new PuzzleController(PUZZLE_DIFFICULTY, PUZZLE_IMG_SRC, 'canvas');
+			puzzleController.init();   		
+		}	
+    </script>
+</head>
+
+<body onload="init();">
+    <canvas id="canvas"></canvas>
+</body>
+
+</html>
