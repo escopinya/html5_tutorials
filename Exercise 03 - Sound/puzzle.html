@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>	
+	<SCRIPT LANGUAGE="JavaScript" SRC="js/PuzzleMO.js"></SCRIPT>	
+	<SCRIPT LANGUAGE="JavaScript" SRC="js/PuzzleView.js"></SCRIPT>	
+	<SCRIPT LANGUAGE="JavaScript" SRC="js/PuzzleController.js"></SCRIPT>		
+	
+    <script>
+        const PUZZLE_DIFFICULTY = 2;
+		var puzzleController;		
+		var multimediaSrcFiles = new Array();
+		
+		randomImageId = Math.floor(Math.random()*4+1);
+		multimediaSrcFiles['puzzleImage'] = "img/puzzleImage_"+randomImageId+".jpg";	
+		
+		multimediaSrcFiles['puzzleSoundPieceSelect'] = "sound/piece_select.mp3";	
+		multimediaSrcFiles['puzzleSoundPieceDrop'] = "sound/piece_drop.mp3";	
+		multimediaSrcFiles['puzzleSoundGameStart'] = "sound/game_start.mp3";	
+		multimediaSrcFiles['puzzleSoundGameEnd'] = "sound/game_over.mp3";
+				
+		function init(){
+			puzzleController = new PuzzleController(PUZZLE_DIFFICULTY, multimediaSrcFiles, 'canvas');
+			puzzleController.init();   		
+		}	
+    </script>
+</head>
+
+<body onload="init();">
+    <canvas id="canvas"></canvas>
+</body>
+
+</html>
